@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 export function About() {
   const skills = [
@@ -6,6 +7,10 @@ export function About() {
     { icon: "fab fa-react", name: "React", color: "text-blue-500" },
     { icon: "fab fa-node-js", name: "Node.js", color: "text-green-500" },
     { icon: "fab fa-bitcoin", name: "Blockchain", color: "text-[hsl(var(--bitcoin))]" },
+    { icon: "fab fa-python", name: "Python", color: "text-blue-400" },
+    { icon: "fab fa-html5", name: "HTML5", color: "text-orange-500" },
+    { icon: "fab fa-css3-alt", name: "CSS3", color: "text-blue-600" },
+    { icon: "fab fa-git-alt", name: "Git", color: "text-red-500" },
   ];
 
   return (
@@ -32,31 +37,16 @@ export function About() {
             
             <div className="space-y-6">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I'm a passionate full-stack developer with over 5 years of experience building scalable web applications 
-                and blockchain solutions. My journey into Bitcoin started in 2018, and since then I've been fascinated 
-                by the potential of decentralized technologies to reshape our world.
+                I'm a passionate developer fascinated by the intersection of technology and Bitcoin. 
+                My journey into Bitcoin sparked my interest in building decentralized solutions that 
+                promote financial sovereignty and privacy.
               </p>
               
               <p className="text-lg text-muted-foreground leading-relaxed">
-                When I'm not coding, you'll find me contributing to open-source projects, writing about Bitcoin 
-                technology, or exploring the latest developments in the crypto space. I believe in building 
-                applications that not only solve problems but also promote financial sovereignty and privacy.
+                When I'm not coding, you'll find me exploring the latest developments in the crypto space, 
+                learning about blockchain technology, and building applications that solve real problems 
+                while embracing the principles of decentralization.
               </p>
-
-              <div className="grid grid-cols-2 gap-4 pt-6">
-                <Card className="text-center p-4 shadow-md">
-                  <CardContent className="p-0">
-                    <div className="text-2xl font-bold text-[hsl(var(--bitcoin))]">50+</div>
-                    <div className="text-sm text-muted-foreground">Projects Completed</div>
-                  </CardContent>
-                </Card>
-                <Card className="text-center p-4 shadow-md">
-                  <CardContent className="p-0">
-                    <div className="text-2xl font-bold text-[hsl(var(--bitcoin))]">5+</div>
-                    <div className="text-sm text-muted-foreground">Years Experience</div>
-                  </CardContent>
-                </Card>
-              </div>
             </div>
           </div>
 
@@ -66,15 +56,23 @@ export function About() {
               Technical <span className="gradient-text">Skills</span>
             </h3>
             
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {skills.map((skill, index) => (
-                <Card key={index} className="text-center p-6 shadow-lg hover:shadow-xl transition-shadow">
-                  <CardContent className="p-0">
-                    <i className={`${skill.icon} text-4xl ${skill.color} mb-4`} />
-                    <h4 className="font-semibold">{skill.name}</h4>
-                  </CardContent>
-                </Card>
-              ))}
+            <div className="max-w-4xl mx-auto">
+              <Carousel className="w-full">
+                <CarouselContent className="-ml-1">
+                  {skills.map((skill, index) => (
+                    <CarouselItem key={index} className="pl-1 md:basis-1/3 lg:basis-1/4">
+                      <Card className="text-center p-6 shadow-lg hover:shadow-xl transition-shadow">
+                        <CardContent className="p-0">
+                          <i className={`${skill.icon} text-4xl ${skill.color} mb-4`} />
+                          <h4 className="font-semibold">{skill.name}</h4>
+                        </CardContent>
+                      </Card>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious />
+                <CarouselNext />
+              </Carousel>
             </div>
           </div>
         </div>

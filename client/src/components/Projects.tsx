@@ -47,16 +47,6 @@ export function Projects() {
       icon: "fas fa-shopping-cart",
       githubUrl: "#",
       demoUrl: "#"
-    },
-    {
-      id: 4,
-      title: "Interactive Portfolio Website",
-      description: "Modern, responsive portfolio website featuring interactive elements, smooth animations, and optimized performance. Built with the latest web technologies.",
-      image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      tags: ["HTML5", "CSS3", "JavaScript", "GSAP"],
-      icon: "fas fa-code",
-      githubUrl: "#",
-      demoUrl: "#"
     }
   ];
 
@@ -121,15 +111,6 @@ export function Projects() {
                 </div>
               </Card>
             ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <Button 
-              size="lg"
-              className="bg-gradient-to-r from-[hsl(var(--bitcoin))] to-[hsl(var(--bitcoin-light))] text-white px-8 py-4 font-semibold hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300"
-            >
-              View All Projects
-            </Button>
           </div>
         </div>
       </div>
