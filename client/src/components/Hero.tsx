@@ -40,8 +40,7 @@ export function Hero() {
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Building the future of decentralized technology, one line of code at a time. 
-            Passionate about Bitcoin, blockchain, and innovative software solutions.
+            Building applications that embrace Bitcoin and decentralization.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
