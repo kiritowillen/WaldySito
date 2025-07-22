@@ -1,9 +1,13 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { useTheme } from "./ThemeProvider";
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { language, setLanguage } = useLanguage();
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -62,7 +66,43 @@ export function Navigation() {
               </button>
             </div>
 
-            <div className="flex items-center">
+            <div className="flex items-center space-x-3">
+              {/* Language Toggle Container */}
+              <div className="hidden md:flex bg-background/80 backdrop-blur-sm rounded-lg p-1 shadow-sm border">
+                <Button
+                  variant={language === 'it' ? 'default' : 'ghost'}
+                  size="sm"
+                  onClick={() => setLanguage('it')}
+                  className={`px-2 py-1 text-xs ${language === 'it' ? 'bg-[hsl(var(--bitcoin))] text-white' : ''}`}
+                >
+                  🇮🇹
+                </Button>
+                <Button
+                  variant={language === 'en' ? 'default' : 'ghost'}
+                  size="sm"
+                  onClick={() => setLanguage('en')}
+                  className={`px-2 py-1 text-xs ${language === 'en' ? 'bg-[hsl(var(--bitcoin))] text-white' : ''}`}
+                >
+                  🇬🇧
+                </Button>
+              </div>
+              
+              {/* Theme Toggle Container */}
+              <div className="hidden md:flex bg-background/80 backdrop-blur-sm rounded-lg p-1 shadow-sm border">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={toggleTheme}
+                  className="p-2 rounded-lg hover:bg-muted/80 transition-colors"
+                >
+                  {theme === "dark" ? (
+                    <i className="fas fa-sun text-lg" />
+                  ) : (
+                    <i className="fas fa-moon text-lg" />
+                  )}
+                </Button>
+              </div>
+              
               <Button
                 variant="ghost"
                 size="sm"
@@ -116,6 +156,49 @@ export function Navigation() {
               >
                 Contact
               </button>
+              
+              {/* Mobile Controls */}
+              <div className="border-t border-border pt-4 mt-6">
+                <div className="space-y-3">
+                  {/* Language Toggle Mobile */}
+                  <div className="flex items-center space-x-2">
+                    <span className="text-sm text-muted-foreground">Lingua:</span>
+                    <Button
+                      variant={language === 'it' ? 'default' : 'ghost'}
+                      size="sm"
+                      onClick={() => setLanguage('it')}
+                      className={`px-2 py-1 text-xs ${language === 'it' ? 'bg-[hsl(var(--bitcoin))] text-white' : ''}`}
+                    >
+                      🇮🇹
+                    </Button>
+                    <Button
+                      variant={language === 'en' ? 'default' : 'ghost'}
+                      size="sm"
+                      onClick={() => setLanguage('en')}
+                      className={`px-2 py-1 text-xs ${language === 'en' ? 'bg-[hsl(var(--bitcoin))] text-white' : ''}`}
+                    >
+                      🇬🇧
+                    </Button>
+                  </div>
+                  
+                  {/* Theme Toggle Mobile */}
+                  <div className="flex items-center space-x-2">
+                    <span className="text-sm text-muted-foreground">Tema:</span>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={toggleTheme}
+                      className="p-2 rounded-lg hover:bg-muted/80 transition-colors"
+                    >
+                      {theme === "dark" ? (
+                        <i className="fas fa-sun text-lg" />
+                      ) : (
+                        <i className="fas fa-moon text-lg" />
+                      )}
+                    </Button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
