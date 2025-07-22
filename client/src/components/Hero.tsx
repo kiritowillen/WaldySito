@@ -1,6 +1,9 @@
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function Hero() {
+  const { t } = useLanguage();
+  
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -34,13 +37,13 @@ export function Hero() {
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            <span className="gradient-text">Developer</span>
+            <span className="gradient-text">{t('hero.title.developer')}</span>
             <span className="text-foreground"> & </span>
-            <span className="gradient-text">Bitcoiner</span>
+            <span className="gradient-text">{t('hero.title.bitcoiner')}</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Building applications that embrace Bitcoin and decentralization.
+            {t('hero.subtitle')}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -49,7 +52,7 @@ export function Hero() {
               className="bg-gradient-to-r from-[hsl(var(--bitcoin))] to-[hsl(var(--bitcoin-light))] text-white px-8 py-4 font-semibold hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300"
               onClick={() => scrollToSection("projects")}
             >
-              View My Work
+              {t('hero.viewWork')}
             </Button>
             <Button 
               variant="outline"
@@ -57,7 +60,7 @@ export function Hero() {
               className="border-2 border-[hsl(var(--bitcoin))] text-[hsl(var(--bitcoin))] px-8 py-4 font-semibold hover:bg-[hsl(var(--bitcoin))] hover:text-white transition-all duration-300"
               onClick={() => scrollToSection("contact")}
             >
-              Get In Touch
+              {t('hero.contact')}
             </Button>
           </div>
 

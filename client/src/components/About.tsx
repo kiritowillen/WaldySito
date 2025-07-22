@@ -1,7 +1,10 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function About() {
+  const { t } = useLanguage();
+  
   const skills = [
     { icon: "fab fa-js-square", name: "JavaScript", color: "text-yellow-500" },
     { icon: "fab fa-react", name: "React", color: "text-blue-500" },
@@ -19,10 +22,10 @@ export function About() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">
-              About <span className="gradient-text">Me</span>
+              {t('about.title')} <span className="gradient-text">Me</span>
             </h2>
             <p className="text-xl text-muted-foreground">
-              Developer, Bitcoin enthusiast, and technology innovator
+              {t('about.subtitle')}
             </p>
           </div>
 
@@ -37,15 +40,11 @@ export function About() {
             
             <div className="space-y-6">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I'm a passionate developer fascinated by the intersection of technology and Bitcoin. 
-                My journey into Bitcoin sparked my interest in building decentralized solutions that 
-                promote financial sovereignty and privacy.
+                {t('about.description1')}
               </p>
               
               <p className="text-lg text-muted-foreground leading-relaxed">
-                When I'm not coding, you'll find me exploring the latest developments in the crypto space, 
-                learning about blockchain technology, and building applications that solve real problems 
-                while embracing the principles of decentralization.
+                {t('about.description2')}
               </p>
             </div>
           </div>
@@ -53,7 +52,7 @@ export function About() {
           {/* Skills Section */}
           <div className="mt-16">
             <h3 className="text-2xl font-bold text-center mb-8">
-              Technical <span className="gradient-text">Skills</span>
+              {t('about.skills')} <span className="gradient-text">Skills</span>
             </h3>
             
             <div className="max-w-4xl mx-auto">

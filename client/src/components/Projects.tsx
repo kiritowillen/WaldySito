@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface Project {
   id: number;
@@ -15,13 +16,14 @@ interface Project {
 }
 
 export function Projects() {
+  const { t } = useLanguage();
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
 
   const projects: Project[] = [
     {
       id: 1,
-      title: "Bitcoin Portfolio Tracker",
-      description: "A comprehensive portfolio management application for Bitcoin investors. Features real-time price tracking, advanced analytics, and secure wallet integration.",
+      title: t('project.bitcoin.title'),
+      description: t('project.bitcoin.description'),
       image: "https://images.unsplash.com/photo-1642790106117-e829e14a795f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
       tags: ["React", "Node.js", "Bitcoin API", "Chart.js"],
       icon: "fab fa-bitcoin",
@@ -30,8 +32,8 @@ export function Projects() {
     },
     {
       id: 2,
-      title: "DeFi Analytics Dashboard",
-      description: "Advanced analytics platform for DeFi protocols. Provides yield farming opportunities, liquidity pool analysis, and automated trading strategies.",
+      title: t('project.defi.title'),
+      description: t('project.defi.description'),
       image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
       tags: ["Vue.js", "Web3", "Solidity", "D3.js"],
       icon: "fas fa-chart-line",
@@ -40,8 +42,8 @@ export function Projects() {
     },
     {
       id: 3,
-      title: "Crypto E-commerce Platform",
-      description: "Full-stack e-commerce solution with integrated cryptocurrency payments. Supports Bitcoin, Lightning Network, and major altcoins for seamless transactions.",
+      title: t('project.ecommerce.title'),
+      description: t('project.ecommerce.description'),
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
       tags: ["Next.js", "Stripe", "Lightning", "MongoDB"],
       icon: "fas fa-shopping-cart",
@@ -56,10 +58,10 @@ export function Projects() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">
-              Featured <span className="gradient-text">Projects</span>
+              {t('projects.title')} <span className="gradient-text">Projects</span>
             </h2>
             <p className="text-xl text-muted-foreground">
-              A showcase of my recent work in web development and blockchain
+              {t('projects.subtitle')}
             </p>
           </div>
 
@@ -101,10 +103,10 @@ export function Projects() {
                     </div>
                     <div className="flex space-x-4">
                       <a href={project.githubUrl} className="flex items-center text-[hsl(var(--bitcoin))] hover:text-[hsl(var(--bitcoin-light))] transition-colors">
-                        <i className="fab fa-github mr-2" /> Code
+                        <i className="fab fa-github mr-2" /> {t('projects.code')}
                       </a>
                       <a href={project.demoUrl} className="flex items-center text-[hsl(var(--bitcoin))] hover:text-[hsl(var(--bitcoin-light))] transition-colors">
-                        <i className="fas fa-external-link-alt mr-2" /> Live Demo
+                        <i className="fas fa-external-link-alt mr-2" /> {t('projects.demo')}
                       </a>
                     </div>
                   </div>

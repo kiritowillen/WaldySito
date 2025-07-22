@@ -5,8 +5,10 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function Contact() {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -23,9 +25,14 @@ export function Contact() {
     // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1000));
     
+    // Create mailto link for simple frontend contact
+    const mailtoLink = `mailto:hello@devbitcoin.dev?subject=${encodeURIComponent(formData.subject || 'Contact from website')}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
+    
+    window.open(mailtoLink, '_blank');
+    
     toast({
-      title: "Message sent!",
-      description: "Thank you for your message. I'll get back to you soon.",
+      title: t('contact.success'),
+      description: t('contact.success'),
     });
 
     setFormData({ name: "", email: "", subject: "", message: "" });
@@ -70,10 +77,10 @@ export function Contact() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">
-              Let's <span className="gradient-text">Connect</span>
+              {t('contact.title')} <span className="gradient-text">Connect</span>
             </h2>
             <p className="text-xl text-muted-foreground">
-              Ready to discuss your next project or just want to chat about Bitcoin?
+{t('contact.subtitle')}
             </p>
           </div>
 
@@ -137,7 +144,7 @@ export function Contact() {
               <CardContent className="p-0">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <Label htmlFor="name">Name</Label>
+                    <Label htmlFor="name">{t('contact.name')}</Label>
                     <Input
                       id="name"
                       name="name"
@@ -149,7 +156,7 @@ export function Contact() {
                   </div>
                   
                   <div>
-                    <Label htmlFor="email">Email</Label>
+                    <Label htmlFor="email">{t('contact.email')}</Label>
                     <Input
                       id="email"
                       name="email"
@@ -162,7 +169,7 @@ export function Contact() {
                   </div>
                   
                   <div>
-                    <Label htmlFor="subject">Subject</Label>
+                    <Label htmlFor="subject">Oggetto</Label>
                     <Input
                       id="subject"
                       name="subject"
@@ -174,7 +181,7 @@ export function Contact() {
                   </div>
                   
                   <div>
-                    <Label htmlFor="message">Message</Label>
+                    <Label htmlFor="message">{t('contact.message')}</Label>
                     <Textarea
                       id="message"
                       name="message"
@@ -191,7 +198,7 @@ export function Contact() {
                     disabled={isSubmitting}
                     className="w-full bg-gradient-to-r from-[hsl(var(--bitcoin))] to-[hsl(var(--bitcoin-light))] text-white py-4 font-semibold hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 disabled:transform-none disabled:opacity-50"
                   >
-                    {isSubmitting ? "Sending..." : "Send Message"}
+                    {isSubmitting ? "Inviando..." : t('contact.send')}
                   </Button>
                 </form>
               </CardContent>
