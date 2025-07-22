@@ -42,13 +42,11 @@ const translations = {
 
     // Contact Section
     'contact.title': 'Contattami',
-    'contact.subtitle': 'Parliamo del tuo prossimo progetto',
-    'contact.description': 'Interessato a collaborare o hai una domanda? Non esitare a contattarmi!',
-    'contact.name': 'Nome',
-    'contact.email': 'Email',
-    'contact.message': 'Messaggio',
-    'contact.send': 'Invia Messaggio',
-    'contact.success': 'Messaggio inviato con successo!',
+    'contact.subtitle': 'Connettiti con me attraverso questi canali',
+    'contact.emailDesc': 'Inviami una email diretta per richieste di progetti',
+    'contact.linkedinDesc': 'Network professionale e aggiornamenti di carriera',
+    'contact.githubDesc': 'Repository di codice e progetti open source',
+    'contact.bitcoinNote': 'Interessato allo sviluppo Bitcoin? Discutiamo di Lightning Network, DeFi e applicazioni decentralizzate.',
   },
   en: {
     // Hero Section
@@ -83,13 +81,11 @@ const translations = {
 
     // Contact Section
     'contact.title': 'Get In Touch',
-    'contact.subtitle': 'Let\'s talk about your next project',
-    'contact.description': 'Interested in working together or have a question? Feel free to reach out!',
-    'contact.name': 'Name',
-    'contact.email': 'Email',
-    'contact.message': 'Message',
-    'contact.send': 'Send Message',
-    'contact.success': 'Message sent successfully!',
+    'contact.subtitle': 'Connect with me through these channels',
+    'contact.emailDesc': 'Send me a direct email for project inquiries',
+    'contact.linkedinDesc': 'Professional network and career updates',
+    'contact.githubDesc': 'Code repositories and open source projects',
+    'contact.bitcoinNote': 'Interested in Bitcoin development? Let\'s discuss Lightning Network, DeFi, and decentralized applications.',
   }
 };
 
