@@ -1,11 +1,9 @@
 import { useState, useEffect } from "react";
-import { useTheme } from "./ThemeProvider";
 import { Button } from "@/components/ui/button";
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -64,20 +62,7 @@ export function Navigation() {
               </button>
             </div>
 
-            <div className="flex items-center space-x-4">
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={toggleTheme}
-                className="p-2 rounded-lg bg-muted hover:bg-muted/80 transition-colors"
-              >
-                {theme === "dark" ? (
-                  <i className="fas fa-sun text-lg" />
-                ) : (
-                  <i className="fas fa-moon text-lg" />
-                )}
-              </Button>
-              
+            <div className="flex items-center">
               <Button
                 variant="ghost"
                 size="sm"
