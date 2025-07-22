@@ -58,7 +58,7 @@ export function Projects() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">
-              {t('projects.title')} <span className="gradient-text">Projects</span>
+              <span className="gradient-text">Projects</span>
             </h2>
             <p className="text-xl text-muted-foreground">
               {t('projects.subtitle')}

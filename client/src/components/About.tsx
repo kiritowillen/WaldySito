@@ -24,7 +24,7 @@ export function About() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">
-              {t('about.title')} <span className="gradient-text">Me</span>
+              <span className="gradient-text">Me</span>
             </h2>
             <p className="text-xl text-muted-foreground">
               {t('about.subtitle')}
@@ -54,7 +54,7 @@ export function About() {
           {/* Skills Section */}
           <div className="mt-16">
             <h3 className="text-2xl font-bold text-center mb-8">
-              {t('about.skills')} <span className="gradient-text">Skills</span>
+              <span className="gradient-text">Skills</span>
             </h3>
             
             <div className="max-w-4xl mx-auto">

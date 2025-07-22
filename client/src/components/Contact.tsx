@@ -34,7 +34,7 @@ export function Contact() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">
-              {t('contact.title')} <span className="gradient-text">Connect</span>
+              <span className="gradient-text">Connect</span>
             </h2>
             <p className="text-xl text-muted-foreground">
               {t('contact.subtitle')}
@@ -64,20 +64,7 @@ export function Contact() {
             ))}
           </div>
 
-          {/* Additional Info */}
-          <div className="mt-16 text-center">
-            <Card className="p-6 bg-gradient-to-r from-[hsl(var(--bitcoin))]/10 to-[hsl(var(--bitcoin-light))]/10 border-[hsl(var(--bitcoin))]/20">
-              <CardContent className="p-0">
-                <div className="flex items-center justify-center space-x-3 mb-4">
-                  <i className="fas fa-bitcoin text-[hsl(var(--bitcoin))] text-2xl" />
-                  <h3 className="text-xl font-bold">Bitcoin Development</h3>
-                </div>
-                <p className="text-muted-foreground">
-                  {t('contact.bitcoinNote')}
-                </p>
-              </CardContent>
-            </Card>
-          </div>
+
         </div>
       </div>
     </section>
