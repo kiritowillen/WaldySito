@@ -6,14 +6,16 @@ export function About() {
   const { t } = useLanguage();
   
   const skills = [
-    { icon: "fab fa-js-square", name: "JavaScript", color: "text-yellow-500" },
+    { icon: "fab fa-bitcoin", name: "Bitcoin", color: "text-[hsl(var(--bitcoin))]" },
+    { icon: "fas fa-mobile-alt", name: "Flutter", color: "text-blue-400" },
     { icon: "fab fa-react", name: "React", color: "text-blue-500" },
-    { icon: "fab fa-node-js", name: "Node.js", color: "text-green-500" },
-    { icon: "fab fa-bitcoin", name: "Blockchain", color: "text-[hsl(var(--bitcoin))]" },
-    { icon: "fab fa-python", name: "Python", color: "text-blue-400" },
-    { icon: "fab fa-html5", name: "HTML5", color: "text-orange-500" },
-    { icon: "fab fa-css3-alt", name: "CSS3", color: "text-blue-600" },
-    { icon: "fab fa-git-alt", name: "Git", color: "text-red-500" },
+    { icon: "fas fa-code", name: "C++", color: "text-blue-600" },
+    { icon: "fab fa-java", name: "Java", color: "text-red-600" },
+    { icon: "fab fa-python", name: "Python", color: "text-yellow-500" },
+    { icon: "fas fa-database", name: "SQL", color: "text-gray-600" },
+    { icon: "fab fa-html5", name: "HTML", color: "text-orange-500" },
+    { icon: "fab fa-css3-alt", name: "CSS", color: "text-blue-500" },
+    { icon: "fab fa-js-square", name: "JavaScript", color: "text-yellow-400" },
   ];
 
   return (
