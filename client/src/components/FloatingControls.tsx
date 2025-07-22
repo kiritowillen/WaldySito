@@ -7,9 +7,9 @@ export function FloatingControls() {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
-      <div className="flex items-center space-x-3 bg-background/80 backdrop-blur-sm rounded-lg p-2 shadow-lg border">
-        {/* Language Toggle - più a sinistra */}
+    <div className="fixed top-6 right-6 z-50 flex items-center space-x-3">
+      {/* Language Toggle Container - a sinistra */}
+      <div className="bg-background/80 backdrop-blur-sm rounded-lg p-2 shadow-lg border">
         <div className="flex items-center space-x-1">
           <Button
             variant={language === 'it' ? 'default' : 'ghost'}
@@ -28,8 +28,10 @@ export function FloatingControls() {
             🇬🇧
           </Button>
         </div>
-        
-        {/* Theme Toggle - più a destra */}
+      </div>
+      
+      {/* Theme Toggle Container - a destra */}
+      <div className="bg-background/80 backdrop-blur-sm rounded-lg p-2 shadow-lg border">
         <Button
           variant="ghost"
           size="sm"
